@@ -313,7 +313,7 @@ export default function DeliveryDashboard() {
       </header>
 
       {/* Tab select bar */}
-      <div style={{ borderBottom: '1px solid var(--color-border)', backgroundColor: 'var(--color-surface)' }}>
+      <div className="top-tab-bar" style={{ borderBottom: '1px solid var(--color-border)', backgroundColor: 'var(--color-surface)' }}>
         <div className="container flex gap-6" style={{ padding: 0 }}>
           <button 
             onClick={() => setActiveTab('available')}
@@ -385,7 +385,7 @@ export default function DeliveryDashboard() {
             </p>
           </div>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(450px, 1fr))', gap: '2.5rem' }}>
+          <div className="shipment-grid" style={{ gap: '2.5rem' }}>
             {filteredOrders.map((order) => (
               <div key={order.id} className="card" style={{ 
                 border: '1px solid var(--color-border)', 
@@ -883,6 +883,40 @@ export default function DeliveryDashboard() {
           </div>
         </div>
       )}
+      {/* Mobile Bottom Navigation */}
+      <nav className="mobile-bottom-nav">
+        <button 
+          onClick={() => setActiveTab('available')}
+          className={`mobile-bottom-nav-item ${activeTab === 'available' ? 'active' : ''}`}
+        >
+          <Clipboard size={20} />
+          <span style={{ fontSize: '0.6rem' }}>Available</span>
+        </button>
+        <button 
+          onClick={() => setActiveTab('active')}
+          className={`mobile-bottom-nav-item ${activeTab === 'active' ? 'active' : ''}`}
+        >
+          <Truck size={20} />
+          <span style={{ fontSize: '0.6rem' }}>Active</span>
+        </button>
+        <button 
+          onClick={() => setActiveTab('history')}
+          className={`mobile-bottom-nav-item ${activeTab === 'history' ? 'active' : ''}`}
+        >
+          <DollarSign size={20} />
+          <span style={{ fontSize: '0.6rem' }}>Earnings</span>
+        </button>
+        <button 
+          onClick={() => {
+            setProfileForm({ name: user?.name || '', email: user?.email || '' });
+            setIsProfileModalOpen(true);
+          }}
+          className="mobile-bottom-nav-item"
+        >
+          <User size={20} />
+          <span style={{ fontSize: '0.6rem' }}>Profile</span>
+        </button>
+      </nav>
     </div>
   );
 }
