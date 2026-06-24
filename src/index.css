@@ -31,8 +31,7 @@
 }
 
 html {
-  overflow-x: hidden;
-  overscroll-behavior: none;
+  /* Removed overflow/overscroll to allow native scrolling */
 }
 
 body {
@@ -42,8 +41,6 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   font-weight: 300;
-  overflow-x: hidden;
-  overscroll-behavior-y: contain;
   -webkit-text-size-adjust: 100%;
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
@@ -1475,6 +1472,9 @@ button {
 
 /* ── Mobile Phones ── */
 @media (max-width: 480px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
   .container {
     padding: 0 0.75rem;
   }
@@ -1489,7 +1489,8 @@ button {
 
   /* Hero section - mobile fit */
   header {
-    height: 100svh !important; /* svh = small viewport height, accounts for mobile browser chrome */
+    height: auto !important; 
+    padding-bottom: 2rem;
   }
 
   /* Product cards - single column, full width */

@@ -1,6 +1,12 @@
 {
-  "appId": "com.viraasat.delivery",
-  "appName": "Viraasat Logistics",
-  "webDir": "dist",
-  "bundledWebRuntime": false
+    "appId":  "com.viraasat.delivery",
+    "appName":  "Viraasat Logistics",
+    "webDir":  "dist",
+    "bundledWebRuntime":  false,
+    "plugins":  {
+                    "SplashScreen":  {
+                                         "backgroundColor":  "#FCFCFC",
+                                         "launchShowDuration":  0
+                                     }
+                }
 }
