@@ -1,0 +1,6 @@
+{
+  "appId": "com.viraasat.delivery",
+  "appName": "Viraasat Logistics",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
