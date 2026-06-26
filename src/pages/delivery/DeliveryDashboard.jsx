@@ -290,6 +290,7 @@ export default function DeliveryDashboard() {
               onClick={() => {
                 setProfileForm({ name: user.name, email: user.email });
                 setIsProfileModalOpen(true);
+                setIsNotificationOpen(false);
               }}
               style={{ 
                 color: 'var(--color-secondary)', 
@@ -525,7 +526,7 @@ export default function DeliveryDashboard() {
           position: 'fixed', 
           inset: 0, 
           backgroundColor: 'rgba(0,0,0,0.5)', 
-          zIndex: 200, 
+          zIndex: 9999, 
           display: 'flex', 
           justifyContent: 'center',
           alignItems: 'center',
@@ -918,6 +919,7 @@ export default function DeliveryDashboard() {
           onClick={() => {
             setProfileForm({ name: user?.name || '', email: user?.email || '' });
             setIsProfileModalOpen(true);
+            setIsNotificationOpen(false);
           }}
           className="mobile-bottom-nav-item"
         >
