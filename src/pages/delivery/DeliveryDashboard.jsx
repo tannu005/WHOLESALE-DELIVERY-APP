@@ -588,6 +588,14 @@ export default function DeliveryDashboard() {
                 >
                   Edit Profile
                 </button>
+                <button 
+                  type="button"
+                  onClick={() => setIsProfileModalOpen(false)} 
+                  className="btn-secondary" 
+                  style={{ padding: '0.85rem', width: '100%', marginTop: '0.5rem' }}
+                >
+                  Go Back
+                </button>
               </div>
             ) : (
               <form onSubmit={handleProfileSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', textAlign: 'left' }}>
